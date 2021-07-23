@@ -1,0 +1,36 @@
+<div>
+    <h3>Editar Usuário</h3>
+</div>
+<form class="example-container" [formGroup]="usuarioForm" (ngSubmit)="updateUsuario(usuarioForm.value)">
+    <mat-form-field>
+        <input matInput name="nome" placeholder="Nome do Usuário" formControlName="nome">
+    </mat-form-field>
+    <br>
+
+    <mat-form-field>
+        <input matInput name="cpf" placeholder="CPF do Usuário" formControlName="cpf">
+    </mat-form-field>
+    <br>
+
+    <mat-form-field>
+        <input matInput name="email" placeholder="Email do Usuário" formControlName="email">
+    </mat-form-field>
+    <br>
+
+    <mat-form-field>
+        <input matInput name="telefone" placeholder="Telefone do Usuário" formControlName="telefone">
+    </mat-form-field>
+    <br>
+
+    <mat-form-field>
+        <input matInput name="sexo" placeholder="Sexo do Usuário" formControlName="sexo">
+    </mat-form-field>
+    <br>
+
+    <mat-form-field>
+        <input matInput name="dataNascimento" placeholder="Data de Nascimento do Usuário" formControlName="dataNascimento">
+    </mat-form-field>
+    <br>
+
+    <button type="submit" [disabled]="!usuarioForm.valid" mat-button color="primary">Editar</button>
+</form>

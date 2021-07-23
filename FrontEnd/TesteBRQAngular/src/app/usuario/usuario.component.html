@@ -1,0 +1,80 @@
+<div>
+  <h3>Lista de Usuarios</h3>
+</div>
+
+    <table mat-table #table [dataSource]="usuarios" class="mat-elevation-z8">
+        
+        <ng-container matColumnDef="nome">
+          <th mat-header-cell *matHeaderCellDef> Nome </th>
+          <th mat-cell *matCellDef="let usuario"> {{usuario.nome}} </th>
+        </ng-container>
+
+        <ng-container matColumnDef="cpf">
+          <th mat-header-cell *matHeaderCellDef> CPF </th>
+          <th mat-cell *matCellDef="let usuario"> {{usuario.cpf}} </th>
+        </ng-container>
+
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef> Email </th>
+          <th mat-cell *matCellDef="let usuario"> {{usuario.email}} </th>
+        </ng-container>
+
+        <ng-container matColumnDef="telefone">
+          <th mat-header-cell *matHeaderCellDef> Telefone </th>
+          <th mat-cell *matCellDef="let usuario"> {{usuario.telefone}} </th>
+        </ng-container>
+
+        <ng-container matColumnDef="sexo">
+          <th mat-header-cell *matHeaderCellDef> Sexo </th>
+          <th mat-cell *matCellDef="let usuario"> {{usuario.sexo}} </th>
+        </ng-container>
+
+        <ng-container matColumnDef="dataNascimento">
+          <th mat-header-cell *matHeaderCellDef> Data de Nascimento </th>
+          <th mat-cell *matCellDef="let usuario"> {{usuario.dataNascimento}} </th>
+        </ng-container> 
+
+        <ng-container matColumnDef="editar">
+          <th mat-header-cell *matHeaderCellDef>  </th>
+          <td mat-cell *matCellDef="let usuario"> <button mat-flat-button color="primary" routerLink="/usuario-editar/{{usuario.id}}" selected>Editar</button></td>
+        </ng-container>
+
+        <ng-container matColumnDef="detalhe">
+          <th mat-header-cell *matHeaderCellDef>  </th>
+          <td mat-cell *matCellDef="let usuario"> <button mat-flat-button color="secondary" routerLink="/usuario-detalhe/{{usuario.id}}" selected>Detalhe</button></td>
+        </ng-container>
+        
+        <ng-container matColumnDef="excluir">
+          <th mat-header-cell *matHeaderCellDef>  </th>
+          <td mat-cell *matCellDef="let usuario"> <button mat-flat-button color="secondary" routerLink="/usuario-excluir/{{usuario.id}}" selected>Excluir</button></td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  </table>
+ 
+
+<!-- <table class="table" >  
+  <tr ngclass="btn-primary">  
+    <th class="tbl2"> Nome</th> 
+    <th class="tbl2"> Email</th>
+    <th class="tbl2"> Telefone</th>
+    <th class="tbl2"> Sexo</th>
+    <th class="tbl2"> CPF</th>
+    <th class="tbl2"> Data de Nascimento</th> 
+  </tr>  
+  <tr *ngFor="let usuario of usuarios">  
+    <td class="tbl2">{{usuario.nome}}</td>  
+    <td class="tbl2">{{usuario.email}}</td> 
+    <td class="tbl2">{{usuario.telefone}}</td> 
+    <td class="tbl2">{{usuario.sexo}}</td> 
+    <td class="tbl2">{{usuario.cpf}}</td> 
+    <td class="tbl2">{{usuario.dataNascimento}}</td>  
+    <td class="tbl2">  
+      <button type="button" class="btn btn-info"matTooltip="Click Edit Button"(click)="loadEmployeeToEdit(employee.EmpId)">Edit</button>  
+    </td>  
+    <td class="tbl2">  
+      <button type="button" class="btn btn-danger"matTooltip="Click Delete Button"(click)="deleteEmployee(employee.EmpId)">Delete</button>  
+    </td>  -->
+<!-- </table> --> 
